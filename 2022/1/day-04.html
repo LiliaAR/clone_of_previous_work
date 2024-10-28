@@ -22,6 +22,8 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   event.preventDefault(); // Prevents form from refreshing the page
 
   const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const messageInput = document.getElementById("message");
   const confirmationMessage = document.getElementById("confirmationMessage");
 
   // Simple validation: Name must be at least 3 characters
@@ -29,5 +31,11 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     alert("Name must be at least 3 characters.");
   } else {
     confirmationMessage.style.display = "block"; // Show confirmation message
+
+    // Clear the form fields
+    nameInput.value = "";
+    emailInput.value = "";
+    messageInput.value = "";
   }
 });
+
