@@ -1,1 +1,23 @@
-<!-- Task for 2022-1-02 -->
+/* Flexbox for Header and Footer */
+header, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+/* CSS Grid for Main Content */
+.main-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-section {
+    grid-template-columns: 1fr;
+  }
+}
