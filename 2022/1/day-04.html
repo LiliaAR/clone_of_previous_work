@@ -1,1 +1,33 @@
-<!-- Task for 2022-1-04 -->
+html: Update your form with an id for easy JavaScript access.
+
+<form id="contactForm" action="#" method="post">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="4" required></textarea>
+
+  <button type="submit">Submit</button>
+</form>
+
+<p id="confirmationMessage" style="display:none; color:green;">Thank you for your message!</p>
+
+
+javascript: Add validation and a confirmation message.
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevents form from refreshing the page
+
+  const nameInput = document.getElementById("name");
+  const confirmationMessage = document.getElementById("confirmationMessage");
+
+  // Simple validation: Name must be at least 3 characters
+  if (nameInput.value.length < 3) {
+    alert("Name must be at least 3 characters.");
+  } else {
+    confirmationMessage.style.display = "block"; // Show confirmation message
+  }
+});
